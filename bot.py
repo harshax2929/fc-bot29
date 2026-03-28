@@ -10,11 +10,28 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from flask import Flask
 from threading import Thread
 
-# ENV VARIABLES
-BOT_TOKEN = "8616624568:AAHaQVvj6yCeHbR249I5bFf9NP6HPfwGnxU"
-EMAIL = "topnotchbollywood@gmail.com"
-APP_PASSWORD = "mrec rzgy ofhw vivb"
-TO_EMAIL = "topnotchbollywood@gmail.com"
+import os
+
+# ================= ENV VARIABLES =================
+
+BOT_TOKEN = os.getenv("8616624568:AAHaQVvj6yCeHbR249I5bFf9NP6HPfwGnxU")
+EMAIL = os.getenv("topnotchbollywood@gmail.com")
+APP_PASSWORD = os.getenv("mrec rzgy ofhw vivb")
+TO_EMAIL = os.getenv("topnotchbollywood@gmail.com")
+
+# ================= SAFETY CHECK =================
+
+if not BOT_TOKEN:
+    raise ValueError("❌ BOT_TOKEN is missing in environment variables")
+
+if not EMAIL:
+    raise ValueError("❌ EMAIL is missing in environment variables")
+
+if not APP_PASSWORD:
+    raise ValueError("❌ APP_PASSWORD is missing in environment variables")
+
+if not TO_EMAIL:
+    raise ValueError("❌ TO_EMAIL is missing in environment variables")
 
 URL = "https://www.firstcry.com/hotwheels/5/0/113?sort=popularity"
 

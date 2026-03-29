@@ -11,6 +11,7 @@ from email.mime.text import MIMEText
 
 # ================== ENV VARIABLES ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+print("BOT_TOKEN =", BOT_TOKEN)
 EMAIL = os.getenv("EMAIL")
 APP_PASSWORD = os.getenv("APP_PASSWORD")
 TO_EMAIL = os.getenv("TO_EMAIL")

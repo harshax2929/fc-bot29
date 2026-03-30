@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from flask import Flask
 from threading import Thread
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import Application, CommandHandler, ContextTypes
 import smtplib
 from email.mime.text import MIMEText
 import telegram
@@ -91,7 +91,7 @@ async def loop(app):
 async def main():
     keep_alive()
 
-    app = ApplicationBuilder().token(BOT_TOKEN).build()
+    app = Application.Builder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("add", add))

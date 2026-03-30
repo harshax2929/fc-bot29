@@ -8,7 +8,8 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import smtplib
 from email.mime.text import MIMEText
-
+import telegram
+print("Telegram version =", telegram.__version__)
 # ================== ENV VARIABLES ==================
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 print("BOT_TOKEN =", BOT_TOKEN)
